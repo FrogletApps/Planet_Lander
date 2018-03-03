@@ -1,0 +1,45 @@
+h1,p{
+    font-family: "Molengo", sans-serif;
+    text-align: center;
+}
+
+canvas{
+    background: #eee;
+    display: block;
+    margin: 0 auto;
+}
+
+body{
+    background:#aaa;
+    padding: 25px 25px;
+}
+
+table{
+    font-size: 1.2em;
+    font-family: "Molengo", sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, td {
+    border: 1px solid black;
+    padding: 12px;
+    text-align: center;
+}
+
+#scores{
+    background-color: #DDD;
+}
+
+#title{
+    background-color: #333;
+    color:#FFF;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+button{
+    font-size: 1.2em;
+    font-family: "Molengo", sans-serif;
+    line-height: 100%;
+}

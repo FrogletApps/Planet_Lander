@@ -10,63 +10,20 @@
 		<link rel="icon" href="Resources/favicon.ico" type="image/ico">
 		<link href='https://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>
 		
-		<!--css styling-->
-		<style>
-			h1{
-				font-family: "Molengo", sans-serif;
-			}
-			table{
-			    font-size: 1.2em;
-			    font-family: "Molengo", sans-serif;
-                border-collapse: collapse;
-                width: 100%;
-            }
-            table, td {
-                border: 1px solid black;
-                padding: 12px;
-                text-align: center;
-            }
-            #scores{
-                background-color: #DDD;
-            }
-            #title{
-                background-color: #333;
-                color:#FFF;
-                font-weight: bold;
-                font-size: 1.3em;
-            }
-            #tiny{
-                font-size: 0.8em;
-            }
-			p, button{
-			    font-size: 1.2em;
-			    font-family: "Molengo", sans-serif;
-			    line-height: 100%;
-			}
-			canvas{
-				background: #eee;
-				display: block;
-				margin: 0 auto;
-			}
-			body{
-				background:#aaa;
-				padding: 25px 25px;
-			}
-		</style>
+		<!--CSS styling-->
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <h1>Top 10 High Scores!</h1>
         <button onclick="goBack()" title="Click here to return back to the game">Back to Game</button>
         <button onclick="window.location.href='/scores.php'" title="Click here to see all the scores">All Scores</button>
         <?php
-        //Connect to database - these values would have to be changed if you move it away from Cloud9
-            $servername = "127.0.0.1";                              //localhost - running on the same server as the rest of the game
-            $username = "novelty12";                                //Your Cloud 9 username
-            $password = "";                                         //No password
-            $dbname   = "planet_lander";                            //Your database name you want to connect to
-            $port = 3306;
-            
-            $count = 1;
+        //Connect to database
+        $servername = "127.0.0.1";                              //localhost
+        $username = "";                                         //
+        $password = "";                                         //
+        $dbname   = "planet_lander";                            //Your database name you want to connect to
+        $port = ;
             
             $pn = $_GET["pn"];
             $ln = $_GET["ln"];
@@ -167,10 +124,11 @@ mysqli_close($conn);
 ?>
 </table>
         <script>
-        function goBack() {
-            //Sends you back to the previous page when the button is clicked.  
-            window.history.back();
-        }
+            function goBack() {
+                //Sends you back to the previous page when the button is clicked. 
+                //Not ideal, but keeps the player "logged in" 
+                window.history.back();
+            }
         </script>
     </body>
 </html>

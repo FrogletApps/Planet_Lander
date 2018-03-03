@@ -10,46 +10,8 @@
 		<link rel="icon" href="Resources/favicon.ico" type="image/ico">
 		<link href='https://fonts.googleapis.com/css?family=Molengo' rel='stylesheet' type='text/css'>
 		
-		<!--css styling-->
-		<style>
-			h1{
-				font-family: "Molengo", sans-serif;
-			}
-			table{
-			    font-size: 1.2em;
-			    font-family: "Molengo", sans-serif;
-                border-collapse: collapse;
-                width: 100%;
-            }
-            table, td {
-                border: 1px solid black;
-                padding: 12px;
-                text-align: center;
-            }
-            #scores{
-                background-color: #DDD;
-            }
-            #title{
-                background-color: #333;
-                color:#FFF;
-                font-weight: bold;
-                font-size: 1.3em;
-            }
-			p, button{
-			    font-size: 1.2em;
-			    font-family: "Molengo", sans-serif;
-			    line-height: 100%;
-			}
-			canvas{
-				background: #eee;
-				display: block;
-				margin: 0 auto;
-			}
-			body{
-				background:#aaa;
-				padding: 25px 25px;
-			}
-		</style>
+		<!--CSS styling-->
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <h1>All Planet Lander Scores</h1>
@@ -57,10 +19,10 @@
         <?php
         //Connect to database
             $servername = "127.0.0.1";                              //localhost
-            $username = "novelty12";                                //Your Cloud 9 username
-            $password = "";                                         //Remember, there is NO password!
+            $username = "";                                         //
+            $password = "";                                         //
             $dbname   = "planet_lander";                            //Your database name you want to connect to
-            $port = 3306;
+            $port = ;
             
             $count = 1;
         
@@ -140,10 +102,11 @@ mysqli_close($conn);
 ?>
 </table>
         <script>
-        function goBack() {
-            //Sends you back to the previous page when the button is clicked.  
-            window.history.go(-2);
-        }
+            function goBack() {
+                //Sends you back to the previous page when the button is clicked.
+                //Not ideal, but keeps the player "logged in"
+                window.history.go(-2);
+            }
         </script>
     </body>
 </html>
