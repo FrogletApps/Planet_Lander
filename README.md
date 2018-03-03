@@ -1,4 +1,4 @@
-# Planet-Lander
+# Planet Lander
 
 This was created as a second year project for my A Levels while I was at Sixth Form.
 
