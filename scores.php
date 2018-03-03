@@ -12,12 +12,15 @@
 		
 		<!--CSS styling-->
         <link rel="stylesheet" type="text/css" href="style.css">
+
+        <!--Page changing script-->
+        <script src="scores.js"></script>
     </head>
     <body>
         <h1>All Planet Lander Scores</h1>
-        <button onclick="goBack()" title="Click here to return back to the game">Back to Game</button>
+        <button onclick="goBackS()" title="Click here to return back to the game">Back to Game</button>
         <?php
-        //Connect to database
+            //Connect to database
             $servername = "127.0.0.1";                              //localhost
             $username = "";                                         //
             $password = "";                                         //
@@ -26,12 +29,12 @@
             
             $count = 1;
         
-        //pn is the player's name
-        //ln is level number
-        //s is the score
-        //l is boolean whether the lander landed (true) or not (false)
+            //pn is the player's name
+            //ln is level number
+            //s is the score
+            //l is boolean whether the lander landed (true) or not (false)
 
-        // Create connection
+            // Create connection
             $conn = new mysqli($servername, $username, $password, $dbname, $port);
             
             //Get information from mySQL
@@ -48,47 +51,47 @@
                         echo "<tr id='scores'><td>" .$count++. "</td><td>" . $row["Uname"]. "</td><td>";
                         switch ($row["Level"]){
                             case 1;
-                            echo "Mercury";
+                                echo "Mercury";
                             break;
                             case 2;
-                            echo "Venus";
+                                echo "Venus";
                             break;
                             case 3;
-                            echo "Moon";
+                                echo "Moon";
                             break;
                             case 4;
-                            echo "Mars";
+                                echo "Mars";
                             break;
                             case 4;
-                            echo "Mars";
+                                echo "Mars";
                             break;
                             case 5;
-                            echo "Ganymede";
+                                echo "Ganymede";
                             break;
                             case 6;
-                            echo "Titan";
+                                echo "Titan";
                             break; 
                             case 7;
-                            echo "Uranus";
+                                echo "Uranus";
                             break;
                             case 8;
-                            echo "Neptune";
+                                echo "Neptune";
                             break;
                             case 9;
-                            echo "Black Hole";
+                                echo "Black Hole";
                             break;  
                             default;
-                            echo "?";
+                                echo "?";
                             break;
                         }
                         echo"</td><td>" . $row["Time"]. "</td><td>" . $row["Score"]. "</td><td>";
                         if ($row["Landed"] == 0){
                             echo "No</td></tr>";
-                        }else if($row["Landed"] == 1){
+                        } else if ($row["Landed"] == 1){
                             echo "Yes</td><tr>";
-                        }else if($row["Landed"] == 2){
+                        } else if ($row["Landed"] == 2){
                             echo "Bonus</td><tr>";
-                        }else{
+                        } else {
                             echo "?</td><tr>";
                         }
                         }
@@ -96,17 +99,9 @@
                     echo "<p>No scores found :c</p>";
                 }
 
- // close connection
-mysqli_close($conn);
-        
-?>
-</table>
-        <script>
-            function goBack() {
-                //Sends you back to the previous page when the button is clicked.
-                //Not ideal, but keeps the player "logged in"
-                window.history.go(-2);
-            }
-        </script>
+            // close connection
+            mysqli_close($conn);     
+        ?>
+        </table>
     </body>
 </html>
